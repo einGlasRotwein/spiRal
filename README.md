@@ -25,7 +25,7 @@ It ain't pretty, but it works.
 
 I've put the spiral function into a tiny package, which you can install:
 
-```
+```R
 library("devtools") # if not available: install.packages("devtools")
 install_github("einGlasRotwein/spiRal")
 
@@ -36,7 +36,7 @@ library("spiRal")
 This will create a spiral with the number 1 - 9 (spirals always start at 1) in 
 a 3 x 3 matrix.
 
-```
+```R
 spiral(9)
 #      [,1] [,2] [,3]
 # [1,]    7    8    9
@@ -47,7 +47,7 @@ spiral(9)
 If the spiral doesn't fit into a square matrix (e.g., 3 x 3 or 4 x 4), missing 
 spots will be filled with NAs.
 
-```
+```R
 spiral(10)
 #      [,1] [,2] [,3] [,4]
 # [1,]    7    8    9   10
@@ -57,7 +57,7 @@ spiral(10)
 
 Of course, larger spirals are also possible:
 
-```
+```R
 # spiral(111)
 #       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11]
 #  [1,]  111   NA   NA   NA   NA   NA   NA   NA   NA    NA    NA
