@@ -58,7 +58,7 @@ spiral(10)
 Of course, larger spirals are also possible:
 
 ```R
-# spiral(111)
+spiral(111)
 #       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11]
 #  [1,]  111   NA   NA   NA   NA   NA   NA   NA   NA    NA    NA
 #  [2,]  110   73   74   75   76   77   78   79   80    81    82
