@@ -1,4 +1,27 @@
 
+#' Creates a spiral
+#'
+#' @param last_num Integer. What the last number of the spiral should be.
+#'
+#' @details 
+#' 
+#' Returns a matrix where numbers are arranged in a spiral. The center of the 
+#' matrix is 1, and numbers increase clockwise towards the outside of the 
+#' matrix.
+#' 
+#' If the numbers can't fill out the matrix entirely (e.g., the numbers from 
+#' 1 - 13 can't be used to create a 3 x 3 or 4 x 4 matrix), empty spots are 
+#' filled with NAs.
+#'
+#' @examples 
+#' 
+#' spiral(9)
+#' spiral(13)
+#' spiral(42)
+#'
+#' @author Juli Nagel \email{juliane.nagel@zi-mannheim.de}
+#' @export
+#'
 spiral <- function(last_num) {
   
   # Determine matrix size
@@ -22,20 +45,22 @@ spiral <- function(last_num) {
   return(x)
 }
 
-# Determine the size of the matrix
-set_m_size <- function(last_num) {
-  ceiling(sqrt(15))
-}
-
-# Find matrix center
-# x = empty matrix
+#' Finds center of a matrix
+#'
+#' @param x A matrix. Rows and columns must be the same number.
+#'
 find_center <- function(x) {
   # If we know nrows, we know ncols, because we only use symmetric matrices
   center_idx <- floor(median(1:nrow(x)))
   return(center_idx)
 }
 
-# Fill the top "pyramid" of the spiral
+#' Fills the "top" pyramid
+#'
+#' @param x A matrix. Rows and columns must be the same number.
+#' @param center_idx The location of the center of the matrix, previously 
+#'                   determined with \code{find_center()}.
+#'
 fill_top <- function(x, center_idx) {
   temp_row <- center_idx
   temp_vec <- c(center_idx, center_idx + 1)
@@ -74,7 +99,12 @@ fill_top <- function(x, center_idx) {
   return(x)
 }
 
-# Fill the bottom "pyramid" of the spiral
+#' Fills the "bottom" pyramid
+#'
+#' @param x A matrix. Rows and columns must be the same number.
+#' @param center_idx The location of the center of the matrix, previously 
+#'                   determined with \code{find_center()}.
+#'
 fill_bottom <- function(x, center_idx) {
   temp_row <- center_idx + 1
   temp_vec <- (center_idx-1):(center_idx + 1)
@@ -113,7 +143,12 @@ fill_bottom <- function(x, center_idx) {
   return(x)
 }
 
-# Fill the right "pyramid" of the spiral
+#' Fills the "right" pyramid
+#'
+#' @param x A matrix. Rows and columns must be the same number.
+#' @param center_idx The location of the center of the matrix, previously 
+#'                   determined with \code{find_center()}.
+#'
 fill_right <- function(x, center_idx) {
   temp_col <- center_idx + 1
   temp_vec <- c(center_idx, center_idx + 1)
@@ -152,7 +187,12 @@ fill_right <- function(x, center_idx) {
   return(x)
 }
 
-# Fill the left "pyramid" of the spiral
+#' Fills the "left" pyramid
+#'
+#' @param x A matrix. Rows and columns must be the same number.
+#' @param center_idx The location of the center of the matrix, previously 
+#'                   determined with \code{find_center()}.
+#'
 fill_left <- function(x, center_idx) {
   temp_col <- center_idx - 1
   temp_vec <- c((center_idx - 1):(center_idx + 1))

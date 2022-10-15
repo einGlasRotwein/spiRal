@@ -1,0 +1,17 @@
+Type: Package
+Package: spiRal
+Title: Arrange numbers in a spiral
+Version: 0.1
+Authors@R: 
+    person(given = "Juli",
+          family = "Nagel",
+          role = c("aut", "cre"),
+          email = "juliane.nagel@zi-mannheim.de")
+Description: Builds a matrix where (increasing) numbers are arranged in a 
+             clockwise spiral.
+URL: https://github.com/einGlasRotwein/spiRal
+Depends: 
+    R (>= 4.2.1)
+Encoding: UTF-8
+LazyLoad: yes
+RoxygenNote: 7.2.1
